@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tec.alvaroramirez.tetristarea2.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <GridLayout
+            android:id="@+id/layoutBoard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/relativeLayout"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/white">
+
+        </GridLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/darker_gray">
+
+
+            <Button
+                android:id="@+id/btn_rotation"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_alignBottom="@+id/btn_down"
+                android:layout_alignStart="@+id/txt_score"
+                android:layout_marginStart="27dp"
+                android:background="@android:drawable/ic_menu_rotate"
+                android:onClick="onRotate" />
+
+            <Button
+                android:id="@+id/btn_right"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_above="@+id/btn_down"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="34dp"
+                android:background="@drawable/rightarrow"
+                android:onClick="onRight" />
+
+            <Button
+                android:id="@+id/btn_down"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_alignEnd="@+id/btn_right"
+                android:layout_below="@+id/btn_left"
+                android:layout_marginEnd="41dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/downarrow"
+                android:onClick="onDown" />
+
+            <Button
+                android:id="@+id/btn_left"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/txt_score"
+                android:layout_marginEnd="20dp"
+                android:layout_toStartOf="@+id/btn_right"
+                android:background="@drawable/leftarrow"
+                android:onClick="onLeft" />
+
+            <TextView
+                android:id="@+id/txt_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="12dp"
+                android:text="Score:" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
